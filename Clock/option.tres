@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="options" load_steps=2 format=3 uid="uid://ct48hkykykh0n"]
+
+[ext_resource type="Script" path="res://code/optionclass.gd" id="1_ur6e5"]
+
+[resource]
+script = ExtResource("1_ur6e5")
+shutdown = false
+alart_time = {
+"end": "0:00:00",
+"start": "16:00:00"
+}
+borderless = true
+topanel = false
+color_back = Color(0.486275, 0.592157, 0.960784, 0)
+color_fonts = Color(0.768627, 0.956863, 0.909804, 0.701961)
+beTop = false
+transparent = true
+format = "yyyy/MM/dd"
+region = "en-US"

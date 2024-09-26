@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="options" load_steps=2 format=3 uid="uid://ct48hkykykh0n"]
+[gd_resource type="Resource" script_class="options" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://code/optionclass.gd" id="1_ur6e5"]
 
@@ -12,8 +12,8 @@ alart_time = {
 borderless = true
 topanel = false
 color_back = Color(0.486275, 0.592157, 0.960784, 0)
-color_fonts = Color(0.768627, 0.956863, 0.909804, 0.701961)
-beTop = false
+color_fonts = Color(0.780392, 0.956863, 0.768627, 0.701961)
+beTop = true
 transparent = true
-format = "yyyy/MM/dd"
+format = "yyyy-MM-dd"
 region = "en-US"

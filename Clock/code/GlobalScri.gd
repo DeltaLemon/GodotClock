@@ -9,6 +9,7 @@ var colorback:Color
 var texturecolor:Color
 var format:String
 var region:String
+var clickthrough:bool
 #var themed:Theme  themed=ResourceLoader.load("res://main.tres")
 #themed.set_color("font_color","Label",option.color_fonts)
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,7 @@ func _ready():
 	winroot.set_transparent_background(true)
 	winroot.always_on_top=option.beTop
 	winroot.borderless=option.borderless
+	clickthrough=option.beTop and option.borderless
 	colorback=option.color_back
 	texturecolor=option.color_fonts
 	format=option.format
@@ -60,3 +62,4 @@ func shutdown():
 	OS.execute("shutdown",["-s"])#Window
 	OS.execute("sudo shutdown",["-h","now"])#MacOS
 	OS.execute("poweroff",[""])#Linux
+	OS.execute("adb shell reboot",["-p"])

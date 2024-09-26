@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dg452qkbyvvq4"]
 
-[ext_resource type="Script" path="res://code/jktime.cs" id="1_onb2v"]
+[ext_resource type="Script" path="res://code/jktime.cs" id="1_rablf"]
 [ext_resource type="FontFile" uid="uid://dt2h4xkx8s5xk" path="res://fonts/DS-DIGII-3.ttf" id="2_6yl4w"]
 [ext_resource type="FontFile" uid="uid://bmhs2ih7j4n21" path="res://fonts/DS-DIGI-1.ttf" id="3_gcb0c"]
 [ext_resource type="Texture2D" uid="uid://b3qugtm44y5o0" path="res://png/setup 拷贝.png" id="4_ejh5r"]
@@ -29,20 +29,21 @@ anchor_bottom = 1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_onb2v")
+mouse_filter = 1
+script = ExtResource("1_rablf")
 
 [node name="backgound" type="ColorRect" parent="."]
 material = SubResource("CanvasItemMaterial_vwc5s")
 layout_mode = 0
 offset_right = 352.0
 offset_bottom = 130.0
+mouse_filter = 1
 color = Color(0.388235, 1, 1, 0.313726)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
-position = Vector2(8, 0)
 color = Color(1, 1, 1, 0.305882)
-polygon = PackedVector2Array(321, 130, 321, 86, 278, 86, 278, 130)
+polygon = PackedVector2Array(333, 130, 333, 86, 292, 86, 292, 130)
 
 [node name="time" type="Label" parent="."]
 material = SubResource("CanvasItemMaterial_vpvjf")
@@ -51,6 +52,7 @@ offset_left = 9.0
 offset_top = -3.0
 offset_right = 347.0
 offset_bottom = 101.0
+mouse_filter = 1
 theme = SubResource("Theme_x2td6")
 theme_override_fonts/font = ExtResource("2_6yl4w")
 theme_override_font_sizes/font_size = 100
@@ -62,6 +64,7 @@ offset_left = 1.0
 offset_top = 89.0
 offset_right = 294.0
 offset_bottom = 128.0
+mouse_filter = 1
 theme = SubResource("Theme_x2td6")
 theme_override_fonts/font = ExtResource("3_gcb0c")
 theme_override_font_sizes/font_size = 35
@@ -72,6 +75,7 @@ layout_mode = 1
 offset_left = 193.0
 offset_right = 301.0
 offset_bottom = 39.0
+mouse_filter = 1
 theme = SubResource("Theme_x2td6")
 theme_override_fonts/font = ExtResource("2_6yl4w")
 theme_override_font_sizes/font_size = 35
@@ -79,10 +83,10 @@ text = "Men"
 
 [node name="option" type="TextureButton" parent="time"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 90.0
-offset_right = 320.0
-offset_bottom = 130.0
+offset_left = 284.0
+offset_top = 91.0
+offset_right = 324.0
+offset_bottom = 131.0
 theme = SubResource("Theme_x2td6")
 texture_normal = ExtResource("4_ejh5r")
 texture_pressed = ExtResource("5_xwy7o")

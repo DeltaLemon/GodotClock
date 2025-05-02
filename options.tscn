@@ -1,0 +1,227 @@
+[gd_scene load_steps=9 format=3 uid="uid://cei25e30vv78v"]
+
+[ext_resource type="Texture2D" uid="uid://b3qugtm44y5o0" path="res://png/setup 拷贝.png" id="1_u0ply"]
+[ext_resource type="FontFile" uid="uid://dt2h4xkx8s5xk" path="res://fonts/DS-DIGII-3.ttf" id="2_uke78"]
+[ext_resource type="Texture2D" uid="uid://cth13ab4xrcf6" path="res://png/save.png" id="3_kl8j1"]
+[ext_resource type="FontFile" uid="uid://bmhs2ih7j4n21" path="res://fonts/DS-DIGI-1.ttf" id="3_mem2j"]
+[ext_resource type="Texture2D" uid="uid://b28humko84g0w" path="res://png/save_pass.png" id="4_dpmp7"]
+[ext_resource type="Script" path="res://code/options.gd" id="5_4mrwr"]
+
+[sub_resource type="Theme" id="Theme_7m6gx"]
+
+[sub_resource type="Theme" id="Theme_a7muf"]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("3_mem2j")
+
+[node name="Control" type="Control" groups=["option"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 499.0
+color = Color(0.462745, 1, 1, 0.654902)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 340.0
+offset_bottom = 41.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 42.0
+offset_bottom = 38.0
+theme = SubResource("Theme_7m6gx")
+texture = ExtResource("1_u0ply")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 14.0
+offset_right = 108.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("2_uke78")
+theme_override_font_sizes/font_size = 25
+text = "Option"
+
+[node name="save" type="TextureButton" parent="ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 2.0
+offset_right = 333.0
+offset_bottom = 42.0
+texture_normal = ExtResource("3_kl8j1")
+texture_pressed = ExtResource("4_dpmp7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 42.0
+offset_right = 333.0
+offset_bottom = 497.0
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/TextureRect/ScrollContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = SubResource("Theme_a7muf")
+script = ExtResource("5_4mrwr")
+
+[node name="TimeOver" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "强制关机          (开启此项将不做提醒)"
+
+[node name="TimeOver" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/TimeOver" groups=["option"]]
+layout_mode = 2
+offset_left = 60.0
+offset_top = -4.0
+offset_right = 126.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+
+[node name="OverTime" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "提醒时间                      ~             "
+
+[node name="start" type="LineEdit" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/OverTime" groups=["option"]]
+layout_mode = 2
+offset_left = 83.0
+offset_top = 4.0
+offset_right = 176.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="end" type="LineEdit" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/OverTime" groups=["option"]]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 4.0
+offset_right = 288.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ColorOption" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "界面颜色	              字体颜色"
+
+[node name="color_back" type="ColorPickerButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/ColorOption" groups=["option"]]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 8.0
+offset_right = 123.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 15
+color = Color(1, 1, 1, 1)
+
+[node name="color_fonts" type="ColorPickerButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/ColorOption" groups=["option"]]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 8.0
+offset_right = 265.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 15
+color = Color(1, 1, 1, 1)
+
+[node name="topanel" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "颜色是否作用设置面板"
+
+[node name="topanel" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/topanel"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 28.0
+
+[node name="Top" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "置顶(可能会影响使用)"
+
+[node name="BeTop" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/Top" groups=["option"]]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 3.0
+offset_right = 269.0
+offset_bottom = 27.0
+
+[node name="borderless" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "无边框"
+
+[node name="beborderless" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/borderless" groups=["option"]]
+layout_mode = 0
+offset_left = 54.0
+offset_top = -3.0
+offset_right = 131.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+
+[node name="dateformat" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 20
+text = "日期格式"
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/dateformat" groups=["option"]]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 6.0
+offset_right = 225.0
+offset_bottom = 26.0
+
+[node name="dateformat2" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "日期格式"
+
+[node name="format" type="OptionButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/dateformat2"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 3.0
+offset_right = 233.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 15
+
+[node name="weekformat" type="Label" parent="ColorRect/TextureRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "星期地区显示格式"
+
+[node name="weekformat" type="OptionButton" parent="ColorRect/TextureRect/ScrollContainer/GridContainer/weekformat"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 4.0
+offset_right = 271.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("3_mem2j")
+theme_override_font_sizes/font_size = 15
+
+[connection signal="pressed" from="ColorRect/TextureRect/save" to="ColorRect/TextureRect/ScrollContainer/GridContainer" method="_on_save_pressed"]
